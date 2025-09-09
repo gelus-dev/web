@@ -1,0 +1,314 @@
+/* -------------------- */
+/* Import Ubuntu font */
+/* -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+/* -------------------- */
+/* General Body Styles */
+/* -------------------- */
+body {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+/* -------------------- */
+/* Header (top) */
+/* -------------------- */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1002; /* above content */
+}
+
+/* Hamburger (left) */
+#menu-btn {
+    display: none;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+/* Header Title (centered) */
+header h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+}
+
+/* Header nav links (right) */
+header nav {
+    flex-shrink: 0;
+}
+
+header nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 15px;
+    margin-top: 0;
+    margin-right: 30px;
+    font-weight: 70px;
+    font-size: 25px;
+    transition: color 0.2s, transform 0.2s;
+    padding: 0;
+}
+
+header nav a:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+header .logo a{
+    font-size: larger;
+    font-weight: 200;
+    text-decoration: none;
+}
+/* -------------------- */
+/* Sticky Navbar below header */
+/* -------------------- */
+.navbar {
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 50px; /* header height */
+    z-index: 1001;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* -------------------- */
+/* Main Content & Sidebar */
+/* -------------------- */
+.container {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    height: calc(100vh - 110px); /* header + navbar */
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    margin-top: 110px; /* below header + navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 5px 0;
+}
+
+.dropdown-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-btn:hover {
+    background-color: #ddd;
+}
+
+.dropdown-container {
+    max-height: 0;
+    overflow: hidden;
+    padding-left: 15px;
+    transition: max-height 0.3s ease;
+}
+
+.dropdown-container.show {
+    max-height: 1000px;
+}
+
+.dropdown-container li a {
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    color: #000;
+    transition: background-color 0.2s;
+}
+
+.dropdown-container li a:hover,
+.dropdown-container li a.active-link {
+    background-color: #ccc;
+    font-weight: 500;
+}
+
+/* Content area */
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 220px; /* space for sidebar */
+    overflow-y: auto;
+}
+
+.content section {
+    display: none;
+}
+
+.content section.active {
+    display: block;
+}
+
+/* -------------------- */
+/* Responsive Images */
+/* -------------------- */
+.content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+/* -------------------- */
+/* Footer */
+/* -------------------- */
+footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+/* -------------------- */
+/* Responsive Design */
+/* -------------------- */
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        position: relative;
+    }
+    .dropdown-btn {
+        font-size: 14px;
+    }
+    .content {
+        margin-left: 0;
+    }
+    header nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    margin-left: 5px;
+    font-weight: 500;
+    font-size: larger;
+    transition: color 0.2s, transform 0.2s;
+    padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+    #menu-btn {
+               display: block;
+        margin-right: 600px;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    header nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    margin-left: 5px;
+    font-weight: 500;
+    font-size: larger;
+    transition: color 0.2s, transform 0.2s;
+    padding: 0;
+}
+
+    /* Navbar sticky below header */
+    .navbar {
+        top: 50px;
+    }
+
+    /* Sidebar for mobile */
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        top: 100px; /* header + navbar height */
+        left: 0;
+        height: calc(100% - 100px); /* full height minus header+navbar */
+        z-index: 1000;
+        width: 220px;
+        margin-top: 0;
+        overflow-y: auto;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+}
+/* Hide all sections by default */
+main section {
+  display: none;
+}
+
+/* Show only the active one */
+main section.active {
+  display: block;
+}
+
+
+section {
+    display: none; /* hide all sections by default */
+}
+
+section.active {
+    display: block; /* show only active section */
+}
