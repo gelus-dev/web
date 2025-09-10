@@ -245,6 +245,7 @@ footer {
     #menu-btn {
                display: block;
         margin-right: 600px;
+        
     }
 
     header h1 {
@@ -256,7 +257,7 @@ footer {
     color: #FFFFFF;
     text-decoration: none;
     margin: 0 10px;
-    margin-left: 5px;
+    margin-left: 0px;
     font-weight: 500;
     font-size: large;
     transition: color 0.2s, transform 0.2s;
